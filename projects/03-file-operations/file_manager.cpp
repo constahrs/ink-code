@@ -23,8 +23,8 @@ public:
         }
         
         time_t now = time(0);
-        char* dt = ctime(&now);
-        file << "\n=== 笔记 [" << dt << "] ===" << endl;
+        string timestamp = ctime(&now);
+        file << "\n=== 笔记 [" << timestamp << "] ===" << endl;
         
         while (getline(cin, note)) {
             if (note == "END") break;
@@ -114,6 +114,14 @@ int main() {
         cout << "============================" << endl;
         cout << "请选择操作 (1-5): ";
         cin >> choice;
+        
+        // 输入验证
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "无效的输入!请输入数字。" << endl;
+            continue;
+        }
         
         switch (choice) {
             case 1:

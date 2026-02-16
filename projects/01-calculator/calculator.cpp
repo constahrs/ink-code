@@ -48,6 +48,14 @@ public:
             displayMenu();
             cin >> choice;
             
+            // 输入验证
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(10000, '\n');
+                cout << "无效的输入!请输入数字。" << endl;
+                continue;
+            }
+            
             if (choice == 5) {
                 cout << "感谢使用计算器!再见!" << endl;
                 break;
