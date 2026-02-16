@@ -24,6 +24,10 @@ public:
         
         time_t now = time(0);
         string timestamp = ctime(&now);
+        // 移除 ctime 返回的尾随换行符
+        if (!timestamp.empty() && timestamp.back() == '\n') {
+            timestamp.pop_back();
+        }
         file << "\n=== 笔记 [" << timestamp << "] ===" << endl;
         
         while (getline(cin, note)) {
