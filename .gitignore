@@ -1,0 +1,33 @@
+# Compiled binaries
+*.exe
+*.out
+calculator
+student_manager
+file_manager
+
+# Object files
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# MacOS files
+.DS_Store
+
+# Generated files
+notes.txt
+*.log
